@@ -44,7 +44,7 @@ async function actualiserMembres(){
  finally{clearTimeout(timeout);inFlight=false;}
 }
 function failure(){const box=$('error');box.hidden=false;box.textContent='Le fond cartographique ne peut pas être chargé. La recherche de membres reste disponible.';}
-try{if(typeof maplibregl==='undefined')throw new Error('MapLibre indisponible');map=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/positron',center:[5,30],zoom:1.7,renderWorldCopies:false});map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');map.on('load',()=>{initialiserPoints();loaded=true;});map.on('error',e=>console.warn('Fond cartographique',e.error));setTimeout(()=>{if(!loaded)failure();},14000);}catch(e){failure();console.warn(e);}
+try{if(typeof maplibregl==='undefined')throw new Error('MapLibre indisponible');map=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/positron',bounds:[[-5.2,41.3],[9.7,51.2]],fitBoundsOptions:{padding:{top:100,bottom:45,left:25,right:25},maxZoom:5.8},renderWorldCopies:false});map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');map.on('load',()=>{initialiserPoints();loaded=true;});map.on('error',e=>console.warn('Fond cartographique',e.error));setTimeout(()=>{if(!loaded)failure();},14000);}catch(e){failure();console.warn(e);}
 actualiserMembres();
 setInterval(()=>{if(!document.hidden)actualiserMembres();},60000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)actualiserMembres();});
