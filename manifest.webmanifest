@@ -1,0 +1,16 @@
+{
+  "name": "La Commu se Connecte",
+  "short_name": "La Commu",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "icons": [
+    {
+      "src": "./icone-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
