@@ -1,6 +1,6 @@
 {
-  "name": "La Commu se Connecte",
-  "short_name": "La Commu",
+  "name": "La Commu de Tonia",
+  "short_name": "La Commu de Tonia",
   "lang": "fr",
   "start_url": "./",
   "scope": "./",
@@ -11,6 +11,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "./icone-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
